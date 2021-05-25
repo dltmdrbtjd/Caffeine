@@ -1,0 +1,130 @@
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+/* header */
+
+header {
+    box-shadow: 0 4px 4px rgba(0,0,0,0.25);
+}
+
+#header {
+    width: 72%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#header > a {
+    font-size: 4.5rem;
+    font-weight: 400;
+    text-decoration: none;
+    color: #0063DC;
+    padding: 1.125rem 0;
+}
+
+#header > ul {
+    display: flex;
+}
+
+#header > ul li a{
+    font-size: 2.25rem;
+    font-weight: 400;
+    color: #c4c4c4;
+    text-decoration: none;
+}
+
+#header > ul > li:last-child {
+    margin-left: 3rem;
+}
+
+
+/* container */
+
+#container {
+    width: 64%;
+    margin: 0 auto;
+    margin-top: 8.3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.content {
+    width: 29.5rem;
+}
+
+.content img {
+    width: 29.5rem;
+    height: 29.5rem;
+}
+
+.content > p {
+    text-align: center;
+    margin-top: 2.125rem;
+    font-size: 2.25rem;
+    font-weight: 400;
+}
+
+.content-info {
+    width: 45rem;
+}
+
+.content-info > ul li {
+    line-height: 3rem;
+    font-size: 2.25rem;
+    font-weight: 400;
+    text-align: left;
+}
+
+.content-menu {
+    text-align: center;
+    margin-top: 2.25rem;
+}
+
+.content-menu strong {
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.content-menu ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.content-menu ul li {
+    line-height: 3rem;
+    margin-left: 3rem;
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+.faovorite-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 6.25rem;
+}
+
+.faovorite-btn button {
+    padding: 0.875rem 4.125rem;
+    background-color: #fff;
+    border-radius: 30px;
+    border: 1px solid #c4c4c4;
+    color: #0063DC;
+    font-size: 1.5rem;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.faovorite-btn > button:last-child {
+    margin-left: 3.75rem;
+}
+
+.faovorite-btn button:hover {
+    background-color: rgba(0,0,0,0.15);
+}
