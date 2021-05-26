@@ -33,7 +33,7 @@ header.section .menu--tab .tab__main:first-child {
 }
 
 .section__search .weather .weather__icon {
-    width: 36px;
+    width: 80px;
 }
 
 @media (max-width: 768px) {
@@ -68,6 +68,6 @@ header.section .menu--tab .tab__main:first-child {
     }
     
     .section__search .weather .weather__icon {
-        width: 24px;
+        width: 60px;
     }
 }

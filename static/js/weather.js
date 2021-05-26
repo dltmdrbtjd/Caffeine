@@ -1,5 +1,4 @@
 (function () {
-    const weather = document.querySelector('.weather');
     const key = "08f8750fb133c6cc93d8842fb98db3cf";
 
     function loadWeather() {
@@ -47,16 +46,12 @@
 
             if (xhr.status === 200) {
                 const temp = document.querySelector('.weather__temp');
-                const icon = document.createElement('img');
+                const icon = document.querySelector('.weather__icon');
                 const response = JSON.parse(xhr.response);
                 
                 temp.innerText = `${Math.round(response.main.temp)} °C`;
 
-                icon.src = `http://openweathermap.org/img/wn/${response.weather[0].icon}@2x.png`;
-                icon.alt = 'weather';
-                icon.setAttribute('class', 'weather__icon');
-
-                weather.appendChild(icon);
+                icon.setAttribute('src', `http://openweathermap.org/img/wn/${response.weather[0].icon}@2x.png`);
             } else {
                 console.error('Error', xhr.status, xhr.statusText);
             }
