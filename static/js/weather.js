@@ -1,5 +1,4 @@
 (function () {
-    const weather = document.querySelector('.weather');
     const key = "08f8750fb133c6cc93d8842fb98db3cf";
 
     function loadWeather() {
@@ -53,8 +52,6 @@
                 temp.innerText = `${Math.round(response.main.temp)} °C`;
 
                 icon.setAttribute('src', `http://openweathermap.org/img/wn/${response.weather[0].icon}@2x.png`);
-
-                weather.appendChild(icon);
             } else {
                 console.error('Error', xhr.status, xhr.statusText);
             }
