@@ -5,8 +5,8 @@ from pymongo import MongoClient
 client = MongoClient('localhost', 27017)
 db = client.dbhomework
 
-from lib import KakaoLocalAPI
-api = KakaoLocalAPI.KakaoLocalAPI('772f46499b4c765949e994cc27e7eba0')
+from lib import KakaoLocalAPI_Controller
+api = KakaoLocalAPI_Controller.KakaoLocalAPI('772f46499b4c765949e994cc27e7eba0')
 
 
 # HTML 화면 보여주기
