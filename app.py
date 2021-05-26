@@ -14,6 +14,18 @@ api = KakaoLocalAPI_Controller.KakaoLocalAPI('772f46499b4c765949e994cc27e7eba0')
 def homework():
     return render_template('index.html')
 
+@app.route('/favorite')
+def favorite():
+    return render_template('favorite.html')
+
+@app.route('/like')
+def like():
+    return render_template('like.html')
+
+@app.route('/info')
+def info():
+    return render_template('info.html')
+
 # 검색기능
 @app.route('/search', methods=['POST'])
 def search():
