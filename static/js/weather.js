@@ -47,14 +47,12 @@
 
             if (xhr.status === 200) {
                 const temp = document.querySelector('.weather__temp');
-                const icon = document.createElement('img');
+                const icon = document.querySelector('.weather__icon');
                 const response = JSON.parse(xhr.response);
                 
                 temp.innerText = `${Math.round(response.main.temp)} °C`;
 
-                icon.src = `http://openweathermap.org/img/wn/${response.weather[0].icon}@2x.png`;
-                icon.alt = 'weather';
-                icon.setAttribute('class', 'weather__icon');
+                icon.setAttribute('src', `http://openweathermap.org/img/wn/${response.weather[0].icon}@2x.png`);
 
                 weather.appendChild(icon);
             } else {
