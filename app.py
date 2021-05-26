@@ -19,3 +19,6 @@ def homework():
 def search():
     query = request.form['keyword_give']
     return api.search_keyword(f'{query}')
+
+if __name__ == '__main__':
+    app.run('0.0.0.0', port=5000, debug=True)
