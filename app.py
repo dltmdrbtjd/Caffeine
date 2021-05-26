@@ -2,8 +2,7 @@ from flask import Flask, render_template, jsonify, request
 app = Flask(__name__)
 
 from pymongo import MongoClient
-client = MongoClient('mongodb://test:test@localhost', 27017) #test:test는 아이디랑 비번.
-# client = MongoClient('localhost', 27017) # aws에선 로컬이 아니므로 주석처리로 보관
+client = MongoClient('localhost', 27017)
 db = client.dbhomework
 
 from lib import KakaoLocalAPI
