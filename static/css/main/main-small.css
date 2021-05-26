@@ -1,0 +1,36 @@
+/* COMMON */
+/* SECTION & CONTAINER */
+.container {
+    width: 95%;
+}
+
+/* HEADER */
+header.section .container {
+    height: 100px;
+}
+
+header.section .logo a {
+    font-size: 2.3rem;
+}
+
+header.section .menu--tab .tab__main {
+    font-size: 1rem;
+}
+
+header.section .menu--tab .tab__main:first-child {
+    margin-right: 1.3rem;
+}
+
+/* SEARCH */
+.section__search {
+    margin: 20px 0;
+}
+
+.section__search .search__wrap {
+    display: block;
+}
+
+#search--form {
+    margin-right: 0;
+    margin-bottom: 15px;
+}
