@@ -1,22 +1,23 @@
 (function () {
     const key = "08f8750fb133c6cc93d8842fb98db3cf";
 
-    function loadWeather() {
+    const loadWeather = function() {
         const currentLocation = localStorage.getItem('coords');
 
         if (!currentLocation) {
             askLocation();
         } else {
             const sendLocation = JSON.parse(localStorage.getItem('coords'));
+            
             showWeather(sendLocation.latitude, sendLocation.longitude);
         }
     }
 
-    function askLocation() {
+    const askLocation = function() {
         navigator.geolocation.getCurrentPosition(successGeo, failedGeo);
     }
 
-    function successGeo(position) {
+    const successGeo = function(position) {
         const latitude = position.coords.latitude;
         const longitude = position.coords.longitude;
 
@@ -26,15 +27,17 @@
         }
 
         localStorage.setItem('coords', JSON.stringify(coordsObj));
+
         const sendCoords = JSON.parse(localStorage.getItem('coords'));
+
         showWeather(sendCoords.latitude, sendCoords.longitude);
     }
 
-    function failedGeo() {
+    const failedGeo = function() {
         console.log('위치를 불러오는데 실패하였습니다.');
     }
 
-    function showWeather(lat, lon) {
+    const showWeather = function(lat, lon) {
         const xhr = new XMLHttpRequest();
 
         xhr.open('GET', `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${key}&units=metric`);
@@ -50,6 +53,7 @@
                 const response = JSON.parse(xhr.response);
                 
                 temp.innerText = `${Math.round(response.main.temp)} °C`;
+                console.log(response.weather);
 
                 icon.setAttribute('src', `http://openweathermap.org/img/wn/${response.weather[0].icon}@2x.png`);
             } else {
