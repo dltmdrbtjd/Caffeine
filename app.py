@@ -26,6 +26,7 @@ def like():
 def info():
     return render_template('info.html')
 
+# 현재주소 불러오기
 @app.route('/address', methods=['GET'])
 def address():
     lat = request.args.get('lat_give')
