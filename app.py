@@ -34,9 +34,9 @@ def address():
     return api.geo_coord2address(lon, lat)
 
 # 검색기능
-@app.route('/search', methods=['POST'])
+@app.route('/search', methods=['GET'])
 def search():
-    query = request.form['keyword_give']
+    query = request.args.get('keyword_give')
     return api.search_keyword(f'{query}')
 
 if __name__ == '__main__':
