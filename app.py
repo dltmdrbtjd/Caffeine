@@ -11,7 +11,7 @@ api = KakaoLocalAPI_Controller.KakaoLocalAPI('772f46499b4c765949e994cc27e7eba0')
 
 # HTML 화면 보여주기
 @app.route('/')
-def homework():
+def homework(): 
     return render_template('index.html')
 
 @app.route('/favorite')
@@ -26,10 +26,17 @@ def like():
 def info():
     return render_template('info.html')
 
+# 현재주소 불러오기
+@app.route('/address', methods=['GET'])
+def address():
+    lat = request.args.get('lat_give')
+    lon = request.args.get('lon_give')
+    return api.geo_coord2address(lon, lat)
+
 # 검색기능
-@app.route('/search', methods=['POST'])
+@app.route('/search', methods=['GET'])
 def search():
-    query = request.form['keyword_give']
+    query = request.args.get('keyword_give')
     return api.search_keyword(f'{query}')
 
 if __name__ == '__main__':
