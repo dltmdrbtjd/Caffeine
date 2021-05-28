@@ -62,13 +62,16 @@ header {
 
 #content div img {
     width: 18.75rem;
-    height: 18.75rem;
 }
 
 #content div p {
-    line-height: 1.25rem;
+    line-height: 1.5rem;
     font-size: 1rem;
     font-weight: 400;
+}
+
+#content div p:nth-child(2) {
+    margin-top: 1em;
 }
 
 @media screen and (max-width: 768px) {
@@ -96,7 +99,6 @@ header {
     
     #content div img {
         width: 18.75rem;
-        height: 18.75rem;
     }
     
     #content div p {
@@ -142,7 +144,6 @@ header {
     
     #content div img {
         width: 9.375rem;
-        height: 9.375rem;
     }
     
     #content div p {
