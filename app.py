@@ -10,7 +10,7 @@ api = KakaoLocalAPI_Controller.KakaoLocalAPI('772f46499b4c765949e994cc27e7eba0')
 
 
 # HTML 화면 보여주기
-@app.route('/', methods=['GET'])
+@app.route('/')
 def homework(): 
     return render_template('index.html')
 
