@@ -70,3 +70,84 @@ header {
     font-size: 1rem;
     font-weight: 400;
 }
+
+@media screen and (max-width: 768px) {
+    #header {
+        width: 83%;
+    }
+
+    #header > a {
+        font-size: 3rem;
+        padding: 2rem 0;
+    }
+
+    #header > ul li a{
+        font-size: 1.5rem;
+    }
+
+    #content {
+        width: 90%;
+    }
+    
+    #content div {
+        margin-top: 3.375rem;
+        margin-left: 1.6rem;
+    }
+    
+    #content div img {
+        width: 18.75rem;
+        height: 18.75rem;
+    }
+    
+    #content div p {
+        line-height: 1.25rem;
+        font-size: 0.85rem;
+        font-weight: 400;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #header > a {
+        font-size: 2.25rem;
+        padding: 2.5rem 0;
+    }
+
+    #header > ul li a {
+        display: inline-block;
+        text-indent: -9999px;
+    }
+
+    #header > ul > li:first-child a {
+        width: 40px;
+        height: 40px;
+        background-image: url(../img/favorite.png);
+        background-size: cover;
+    }
+
+    #header > ul > li:last-child a {
+        width: 40px;
+        height: 40px;
+        background-image: url(../img/likepage.png);
+        background-size: cover;
+    } 
+
+    #content {
+        width: 93%;
+    }
+    
+    #content div {
+        margin-top: 2em;
+        margin-left: 1.5rem;
+    }
+    
+    #content div img {
+        width: 9.375rem;
+        height: 9.375rem;
+    }
+    
+    #content div p {
+        line-height: 1.25rem;
+        font-size: 0.7rem;
+        font-weight: 400;
+    }
+}  
