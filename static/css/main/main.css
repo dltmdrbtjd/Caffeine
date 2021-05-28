@@ -117,6 +117,12 @@ header.section .menu--tab .tab__main a {
     align-items: center;
 }
 
+.section__search .search__wrap {
+    width: 60%;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
 #search--form {
     padding: 20px 15px;
     border: 1px solid #c4c4c4;
@@ -129,6 +135,7 @@ header.section .menu--tab .tab__main a {
 }
 
 #input--search {
+    flex: 1;
     font-size: 24px;
     text-align: right;
 }
@@ -137,6 +144,12 @@ header.section .menu--tab .tab__main a {
     font-size: 48px;
     color: #0063DC;
     margin-right: 30px;
+}
+
+.section__search .current-address {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    color: #0063DC;
 }
 
 /* INFO */
