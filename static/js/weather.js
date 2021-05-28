@@ -1,4 +1,5 @@
 (function () {
+    const weather = document.querySelector('.weather');
     const key = "08f8750fb133c6cc93d8842fb98db3cf";
 
     const loadWeather = function() {
@@ -10,6 +11,7 @@
             const sendLocation = JSON.parse(localStorage.getItem('coords'));
             
             showWeather(sendLocation.latitude, sendLocation.longitude);
+            getCurrentAddress(sendLocation.latitude, sendLocation.longitude);
         }
     }
 
@@ -24,13 +26,14 @@
         const coordsObj = {
             latitude,
             longitude
-        }
+        };
 
         localStorage.setItem('coords', JSON.stringify(coordsObj));
 
         const sendCoords = JSON.parse(localStorage.getItem('coords'));
 
         showWeather(sendCoords.latitude, sendCoords.longitude);
+        getCurrentAddress(sendCoords.latitude, sendCoords.longitude);
     }
 
     const failedGeo = function() {
@@ -49,13 +52,16 @@
 
             if (xhr.status === 200) {
                 const temp = document.querySelector('.weather__temp');
-                const icon = document.querySelector('.weather__icon');
+                const icon = document.createElement('img');
                 const response = JSON.parse(xhr.response);
                 
                 temp.innerText = `${Math.round(response.main.temp)} °C`;
-                console.log(response.weather);
 
-                icon.setAttribute('src', `http://openweathermap.org/img/wn/${response.weather[0].icon}@2x.png`);
+                icon.setAttribute('class', 'weather__icon');
+                icon.src = `http://openweathermap.org/img/wn/${response.weather[0].icon}@2x.png`;
+                icon.alt = 'weather icon';
+
+                weather.appendChild(icon);
             } else {
                 console.error('Error', xhr.status, xhr.statusText);
             }

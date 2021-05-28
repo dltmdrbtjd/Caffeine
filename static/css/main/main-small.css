@@ -27,10 +27,16 @@ header.section .menu--tab .tab__main:first-child {
 }
 
 .section__search .search__wrap {
+    width: 90%;
     display: block;
 }
 
 #search--form {
     margin-right: 0;
     margin-bottom: 15px;
+}
+
+.section__search .current-address {
+    margin-top: 10px;
+    font-size: 14px;
 }
