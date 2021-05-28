@@ -16,6 +16,10 @@ header.section .menu--tab .tab__main:first-child {
     margin: 30px 0;
 }
 
+.section__search .search__wrap {
+    width: 90%;
+}
+
 #search--form {
     padding: 15px 10px;
 }
@@ -49,9 +53,18 @@ header.section .menu--tab .tab__main:first-child {
 
 @media (max-width: 528px) {
     /* SEARCH */
+    .section__search {
+        margin: 20px 0;
+    }
+    
+    .section__search .search__wrap {
+        display: block;
+    }
+    
     #search--form {
+        margin-right: 0;
+        margin-bottom: 15px;
         padding: 10px;
-        margin-right: 20px;
     }
     
     .section__search .btn--search img {
@@ -69,5 +82,10 @@ header.section .menu--tab .tab__main:first-child {
     
     .section__search .weather .weather__icon {
         width: 60px;
+    }
+
+    .section__search .current-address {
+        margin-top: 10px;
+        font-size: 14px;
     }
 }
