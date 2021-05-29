@@ -31,7 +31,7 @@ def info():
 def address():
     lat = request.args.get('lat_give')
     lon = request.args.get('lon_give')
-    return api.geo_coord2address(lon, lat)
+    return api.geo_coord2regioncode(lon, lat)
 
 # 검색기능
 @app.route('/search', methods=['GET'])

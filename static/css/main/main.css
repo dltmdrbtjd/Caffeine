@@ -102,7 +102,8 @@ header.section .menu--tab .tab__main a {
 .section__search,
 .section__search .search__wrap,
 #search--form,
-.section__search .weather {
+.section__search .weather,
+.section__search .address {
     display: flex;
 }
 
@@ -118,7 +119,6 @@ header.section .menu--tab .tab__main a {
 }
 
 .section__search .search__wrap {
-    width: 60%;
     flex-wrap: wrap;
     justify-content: center;
 }
@@ -146,10 +146,19 @@ header.section .menu--tab .tab__main a {
     margin-right: 30px;
 }
 
-.section__search .current-address {
+.section__search .address {
+    width: 70%;
     margin-top: 20px;
-    font-size: 1.2rem;
     color: #0063DC;
+}
+
+.section__search .address .current-address {
+    word-break:keep-all;
+}
+
+.section__search .address .btn--gps {
+    margin-top: 3px;
+    margin-left: 5px;
 }
 
 /* INFO */

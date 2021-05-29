@@ -84,8 +84,7 @@ header.section .menu--tab .tab__main:first-child {
         width: 60px;
     }
 
-    .section__search .current-address {
+    .section__search .address {
         margin-top: 10px;
-        font-size: 14px;
     }
 }
