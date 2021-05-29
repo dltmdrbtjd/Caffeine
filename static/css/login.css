@@ -1,0 +1,145 @@
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+/* header */
+
+header {
+    box-shadow: 0 4px 4px rgba(0,0,0,0.25);
+}
+
+#header {
+    width: 72%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#header > a {
+    font-size: 4.5rem;
+    font-weight: 400;
+    text-decoration: none;
+    color: #0063DC;
+    padding: 1.125rem 0;
+}
+
+#header > ul {
+    display: flex;
+}
+
+#header > ul li a{
+    font-size: 2.25rem;
+    font-weight: 400;
+    color: #c4c4c4;
+    text-decoration: none;
+}
+
+#header > ul > li:nth-child(2),
+#header > ul > li:last-child {
+    margin-left: 2rem;
+}
+
+#header > ul > li:last-child a {
+    color: #0063DC;
+}
+
+/* member_login */
+
+#member_login {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15em;
+}
+
+#member_login > div:first-child > h2:first-child {
+    font-weight: 800;
+    font-size: 2.25rem;
+    margin-bottom: 0.75em;
+}
+
+#member_login input {
+    border: 1px solid #B4B4B4;
+}
+
+#login {
+    display: flex;
+}
+
+#login > div {
+    width: 25em;
+}
+
+#login > div > input {
+    width: 28.125rem;
+    height: 2.5rem;
+    padding-left: 0.625rem;
+    font-weight: 400;
+    font-size: 0.875rem;
+}
+
+#login > div > input:first-child {
+    margin-bottom: 1.25rem;
+}
+
+#login > input {
+    width: 10rem;
+    height: 6.813rem;
+    margin-left: 5rem;
+    cursor: pointer;
+    background-color: #fff;
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+/* 아이디를 제대로 입력하지 않을시 나오는 텍스트
+#login > p {
+    margin-top: 10px;
+    color: #ff0000;
+    font-weight: 400;
+    font-size: 14px;
+} */
+
+#member_login > div:first-child > div:nth-child(3) {
+    display: flex;
+    align-items: center;
+    width: 12.5em;
+    height: 1.25em;
+    margin-top: 1.875em;
+}
+
+#member_login > div:first-child > div:nth-child(3) > p {
+    font-weight: 400;
+    font-size: 1.125rem;
+    margin-left: 0.625rem;
+}
+
+#member_login > div:nth-child(3) > input {
+    width: 1.5em;
+    height: 1.5em;
+}
+
+#member_login > div:first-child > div:nth-child(4) {
+    margin:0 auto;
+    margin-top: 3.125em;
+    width: 19.5em;
+    height: 1.25em;
+}
+
+#member_login > div:first-child > div:nth-child(4) > a {
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 1.125rem;
+    color:#000;
+}
+
+#member_login > div:first-child > div:nth-child(4) > a:first-child {
+    padding-right: 1.25em;
+    border-right: 1px solid #000;
+}
+
+#member_login > div:first-child > div:nth-child(4) > a:last-child {
+    margin-left: 1.2em;
+}

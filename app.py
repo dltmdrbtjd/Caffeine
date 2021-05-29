@@ -26,6 +26,9 @@ def like():
 def info():
     return render_template('info.html')
 
+@app.route('/login')
+def login():
+    return render_template('login.html')
 # 현재주소 불러오기
 @app.route('/address', methods=['GET'])
 def address():

@@ -35,11 +35,12 @@ header {
     text-decoration: none;
 }
 
+#header > ul > li:nth-child(2),
 #header > ul > li:last-child {
-    margin-left: 3rem;
+    margin-left: 2rem;
 }
 
-#header > ul > li:last-child a {
+#header > ul > li:nth-child(2) a {
     color: #0063DC;
 }
 

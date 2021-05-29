@@ -35,8 +35,9 @@ header {
     text-decoration: none;
 }
 
+#header > ul > li:nth-child(2),
 #header > ul > li:last-child {
-    margin-left: 3rem;
+    margin-left: 2rem;
 }
 
 #header > ul > li:first-child a {
