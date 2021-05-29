@@ -1,5 +1,5 @@
-(function () {
-    const weather = document.querySelector('.weather');
+const weather = (function () {
+    const $weather = document.querySelector('.weather');
     const key = "08f8750fb133c6cc93d8842fb98db3cf";
 
     const loadWeather = function() {
@@ -11,7 +11,7 @@
             const sendLocation = JSON.parse(localStorage.getItem('coords'));
             
             showWeather(sendLocation.latitude, sendLocation.longitude);
-            getCurrentAddress(sendLocation.latitude, sendLocation.longitude);
+            getCurrentAddress.showAddress(sendLocation.latitude, sendLocation.longitude);
         }
     }
 
@@ -33,7 +33,7 @@
         const sendCoords = JSON.parse(localStorage.getItem('coords'));
 
         showWeather(sendCoords.latitude, sendCoords.longitude);
-        getCurrentAddress(sendCoords.latitude, sendCoords.longitude);
+        getCurrentAddress.showAddress(sendCoords.latitude, sendCoords.longitude);
     }
 
     const failedGeo = function() {
@@ -61,7 +61,7 @@
                 icon.src = `http://openweathermap.org/img/wn/${response.weather[0].icon}@2x.png`;
                 icon.alt = 'weather icon';
 
-                weather.appendChild(icon);
+                $weather.appendChild(icon);
             } else {
                 console.error('Error', xhr.status, xhr.statusText);
             }
@@ -69,4 +69,9 @@
     }
 
     loadWeather();
+
+    return {
+        askLocation,
+        weather: $weather
+    }
 })()
