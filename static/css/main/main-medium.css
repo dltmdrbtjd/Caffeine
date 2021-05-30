@@ -5,9 +5,6 @@ header.section .logo a {
 
 header.section .menu--tab .tab__main {
     font-size: 1.2rem;
-}
-
-header.section .menu--tab .tab__main:first-child {
     margin-right: 2rem;
 }
 
@@ -52,6 +49,11 @@ header.section .menu--tab .tab__main:first-child {
 }
 
 @media (max-width: 528px) {
+    /* HEADER */
+    header.section .menu--tab .tab__main {
+        margin-right: 1.5rem;
+    }
+
     /* SEARCH */
     .section__search {
         margin: 20px 0;
