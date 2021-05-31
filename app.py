@@ -1,3 +1,4 @@
+import os
 from flask import Flask, render_template, jsonify, request, redirect, session
 from models import db, Fcuser
 from flask_wtf.csrf import CSRFProtect
