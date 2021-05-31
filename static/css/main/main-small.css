@@ -10,13 +10,36 @@ header.section .container {
 }
 
 header.section .logo a {
-    font-size: 2.3rem;
+    font-size: 2.25rem;
 }
 
-header.section .menu--tab .tab__main {
-    font-size: 1rem;
+header.section .menu--tab .favorite a,
+header.section .menu--tab .like a {
+    width: 40px;
+    height: 40px;
+    background-size: cover;
+    text-indent: -9999px;
+    display: inline-block;
 }
 
-header.section .menu--tab .tab__main:first-child {
-    margin-right: 1.3rem;
+header.section .menu--tab .favorite a {
+    background-image: url(../../img/favorite.png);
+}
+
+header.section .menu--tab .like a {
+    background-image: url(../../img/like.png);
+}
+
+/* INFO */
+.section__info .info__cafe {
+    margin-top: 2em;
+    margin-left: 1.5rem;
+}
+
+.section__info .info__cafe .cafe__image {
+    width: 9.375rem;
+}
+
+.section__info .info__cafe .cafe__summary {
+    font-size: 0.7rem;
 }

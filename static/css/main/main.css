@@ -84,13 +84,11 @@ header.section .logo a {
 
 header.section .menu--tab {
     display: flex;
+    align-items: center;
 }
 
 header.section .menu--tab .tab__main {
     font-size: 2.25rem;
-}
-
-header.section .menu--tab .tab__main {
     margin-right: 2rem;
 }
 
@@ -113,7 +111,7 @@ header.section .menu--tab .tab__main a {
 
 .section__search {
     justify-content: center;
-    margin: 70px 0;
+    margin-top: 70px;
 }
 
 .section__search .search__wrap,
@@ -172,7 +170,9 @@ header.section .menu--tab .tab__main a {
 }
 
 .section__info .info__cafe {
-    padding: 1rem;
+    text-align: center;
+    margin-top: 3.375rem;
+    margin-left: 3.375rem;
 }
 
 .section__info .info__cafe .cafe__image {
@@ -180,7 +180,6 @@ header.section .menu--tab .tab__main a {
 }
 
 .section__info .info__cafe .cafe__summary {
-    text-align: center;
     line-height: 1.5;
     font-size: 1rem;
 }
