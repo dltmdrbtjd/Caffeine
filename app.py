@@ -1,6 +1,6 @@
 import os
 from flask import Flask, render_template, jsonify, request, redirect, session
-from models import db, Fcuser
+from models import db, Fcuser, Likes, Favorites
 from flask_wtf.csrf import CSRFProtect
 from forms import RegisterForm, LoginForm
 from lib import KakaoLocalAPI_Controller
@@ -13,13 +13,19 @@ api = KakaoLocalAPI_Controller.KakaoLocalAPI('772f46499b4c765949e994cc27e7eba0')
 def home():
     return render_template('index.html')
 
-@app.route('/favorite')
-def favorite():
-    return render_template('favorite.html')
+# @app.route('/favorite')
+# def favorite():
+#     favorites = Favorites()
+#     favorites.name = 
+#     favorites.x = 
+#     favorites.y = 
+#     return render_template('favorite.html')
 
-@app.route('/like')
-def like():
-    return render_template('like.html')
+# @app.route('/like')
+# def like():
+#     likes = Likes()
+#     likes.like += 1 
+#     return render_template('like.html')
 
 @app.route('/info')
 def info():
