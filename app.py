@@ -1,18 +1,11 @@
-from flask import Flask, render_template, jsonify, request, redirect
-from flask import Flask, request, redirect, render_template
+from flask import Flask, render_template, jsonify, request, redirect, session
 from models import db, Fcuser
-from flask import session
 from flask_wtf.csrf import CSRFProtect
 from forms import RegisterForm, LoginForm
 from lib import KakaoLocalAPI_Controller
 
-from pymongo import MongoClient
-client = MongoClient('localhost', 27017)
-db = client.dbhomework
-
 app = Flask(__name__)
 api = KakaoLocalAPI_Controller.KakaoLocalAPI('772f46499b4c765949e994cc27e7eba0')
-
 
 # HTML 화면 보여주기
 @app.route('/')
