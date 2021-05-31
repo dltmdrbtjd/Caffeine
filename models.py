@@ -8,3 +8,7 @@ class Fcuser(db.Model):
     password = db.Column(db.String(64)) # 문자열길이
     userid = db.Column(db.String(32))
     username = db.Column(db.String(8))
+
+class Likes(db.Model):
+    
+class Favorites(db.Model):
