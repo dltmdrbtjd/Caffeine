@@ -1,0 +1,197 @@
+body {
+    font-family: 'Roboto', sans-serif;
+}
+/* header */
+
+header {
+    box-shadow: 0 4px 4px rgba(0,0,0,0.25);
+}
+
+#header {
+    width: 72%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#header > a {
+    font-size: 4.5rem;
+    font-weight: 400;
+    text-decoration: none;
+    color: #0063DC;
+    padding: 1.125rem 0;
+}
+
+#header > ul {
+    display: flex;
+}
+
+#header > ul li a{
+    font-size: 2.25rem;
+    font-weight: 400;
+    color: #c4c4c4;
+    text-decoration: none;
+}
+
+#header > ul > li:nth-child(2),
+#header > ul > li:last-child {
+    margin-left: 2rem;
+}
+
+#header > ul > li:last-child a {
+    color: #0063DC;
+}
+
+
+/* sign input Commons */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+#sign_up {
+    margin-top:10em;
+}
+
+#sign_up input {
+    border: 1px solid #B4B4B4;
+}
+
+#sign_up label {
+    width: 6rem;
+    height: 14px;
+    display: block;
+}
+
+.input_c {
+    width: 25rem;
+    height: 40px;
+    padding-left: 0.625rem;
+}
+
+.input_b {
+    width: 5.5rem;
+    height: 40px;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+#sign_up > div > div {
+    display: flex;
+    align-items: center;
+    width: 650px;
+    margin-top: 30px;
+}
+
+#sign_up h3 {
+    width: 6rem;
+    display: block;
+    text-align: right;
+    margin-right: 1.25rem;
+
+}
+/* sign input Commons */
+
+/* Sign_up */
+#sign_up {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 400;
+    font-size: 0.875rem;
+}
+/* Sign_up*/
+.sign_userid {
+    flex-wrap: wrap;
+}
+
+.sign_userid > input:nth-child(3) {
+    margin-left: 0.625em;
+}
+
+/* 아이디 사용가능 여부 확인
+.sign_userid > span {
+    margin-left: 106px;
+    margin-top: 10px;
+    color: #ff0000;
+} */
+
+#sign_up > div > .sign_userPw2 {
+    margin-top: 0.375em;
+    flex-wrap: wrap;
+}
+
+#sign_up > div > .sign_userPw2 > span {
+    margin-left: 8.2em;
+    margin-top: 0.625em;
+    color: #ff0000;
+}
+
+.sign_up_btn {
+    display: block;
+    margin:0 auto;
+    margin-top: 1.875em;
+    width: 12.5em;
+    height: 40px;
+    background-color: #6C6C6C;
+    border-radius: 4px;
+    color:#fff;
+    cursor: pointer;
+}
+
+#Sign_Up_Success {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+#Sign_Up_Success  p:nth-child(1) {
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin-bottom: 1.875em;
+}
+
+#Sign_Up_Success  p:last-child {
+    font-weight: 400;
+    font-size: 1.5rem;
+}
+@media screen and (max-width:1024px){
+
+    #header {
+        width: 83%;
+    }
+
+    #header > a {
+        font-size: 3rem;
+        padding: 2rem 0;
+    }
+
+    #header > ul li a{
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width:768px){
+
+    #header > ul > li:nth-child(2),
+    #header > ul > li:last-child {
+        margin-left: 1rem;
+    }
+}
+
+@media screen and (max-width:528px){
+
+    #header > a {
+        font-size: 2.25rem;
+        padding: 2.5rem 0;
+    }
+    
+    #header > ul li a{
+        font-size: 1rem;
+    }
+}

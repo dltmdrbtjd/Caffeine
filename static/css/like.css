@@ -1,7 +1,6 @@
-* {
+body {
     font-family: 'Roboto', sans-serif;
 }
-
 /* header */
 
 header {
@@ -75,7 +74,8 @@ header {
     margin-top: 1em;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
+    
     #header {
         width: 83%;
     }
@@ -87,6 +87,14 @@ header {
 
     #header > ul li a{
         font-size: 1.5rem;
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+    #header > ul > li:nth-child(2),
+    #header > ul > li:last-child {
+        margin-left: 1rem;
     }
 
     #content {
@@ -109,31 +117,15 @@ header {
     }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 528px) {
     #header > a {
         font-size: 2.25rem;
         padding: 2.5rem 0;
     }
-
-    #header > ul li a {
-        display: inline-block;
-        text-indent: -9999px;
+    
+    #header > ul li a{
+        font-size: 1rem;
     }
-
-    #header > ul > li:first-child a {
-        width: 40px;
-        height: 40px;
-        background-image: url(../img/favorite.png);
-        background-size: cover;
-    }
-
-    #header > ul > li:last-child a {
-        width: 40px;
-        height: 40px;
-        background-image: url(../img/likepage.png);
-        background-size: cover;
-    } 
-
     #content {
         width: 93%;
     }
