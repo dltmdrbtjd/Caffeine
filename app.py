@@ -41,7 +41,7 @@ def register():  # get 요청 단순히 페이지 표시 post요청 회원가입
         return "가입 완료"  # post요청일시는 '/'주소로 이동. (회원가입 완료시 화면이동)
     return render_template('register.html', form=form)
 
-@app.route('/login', method = ['GET','POST'])
+@app.route('/login', methods=['GET', 'POST'])
 def login():
     form = LoginForm()  # 로그인 폼 생성
     if form.validate_on_submit():  # 유효성 검사
@@ -56,15 +56,10 @@ def logout():
     session.pop('userid',None)
     return redirect('/')
 
-@app.route('/logout',methods=['GET'])
-def logout():
-    session.pop('userid',None)
-    return redirect('/')
-
 @app.route('/login/sign_up')
 def sign_up():
     return render_template('sign_up.html')
-    
+
 # 현재주소 불러오기
 @app.route('/address', methods=['GET'])
 def address():
