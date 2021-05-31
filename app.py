@@ -42,7 +42,6 @@ def register():  # get 요청 단순히 페이지 표시 post요청 회원가입
         fcuser.username = form.data.get('username')
         fcuser.password = form.data.get('password')
 
-        print(fcuser.userid, fcuser.password)  # 회원가입 요청시 콘솔창에 ID만 출력 (확인용, 딱히 필요없음)
         db.session.add(fcuser)  # id, name 변수에 넣은 회원정보 DB에 저장
         db.session.commit()  # 커밋
         return "가입 완료"  # post요청일시는 '/'주소로 이동. (회원가입 완료시 화면이동)
