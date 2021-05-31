@@ -41,15 +41,8 @@ def register():  # get 요청 단순히 페이지 표시 post요청 회원가입
         return "가입 완료"  # post요청일시는 '/'주소로 이동. (회원가입 완료시 화면이동)
     return render_template('register.html', form=form)
 
-@app.route('/login', methods=['GET', 'POST'])
+@app.route('/login', method = ['GET','POST'])
 def login():
-<<<<<<< HEAD
-    return render_template('login.html')
-
-@app.route('/login/sign_up')
-def sign_up():
-    return render_template('sign_up.html')
-=======
     form = LoginForm()  # 로그인 폼 생성
     if form.validate_on_submit():  # 유효성 검사
         session['userid'] = form.data.get('userid')  # form에서 가져온 userid를 session에 저장
@@ -62,8 +55,16 @@ def sign_up():
 def logout():
     session.pop('userid',None)
     return redirect('/')
->>>>>>> 696040375d6ad93e82ae81c20dc955d191848d5a
 
+@app.route('/logout',methods=['GET'])
+def logout():
+    session.pop('userid',None)
+    return redirect('/')
+
+@app.route('/login/sign_up')
+def sign_up():
+    return render_template('sign_up.html')
+    
 # 현재주소 불러오기
 @app.route('/address', methods=['GET'])
 def address():
@@ -77,10 +78,6 @@ def search():
     query = request.args.get('keyword_give')
     return api.search_keyword(f'{query}')
 
-<<<<<<< HEAD
-if __name__ == '__main__':
-    app.run('0.0.0.0', port=5000, debug=True)
-=======
 if __name__ == "__main__":
     basedir = os.path.abspath(os.path.dirname(__file__))  # db파일을 절대경로로 생성
     dbfile = os.path.join(basedir, 'db.sqlite')  # db파일을 절대경로로 생성
@@ -98,4 +95,3 @@ if __name__ == "__main__":
     db.create_all()  # db 생성
 
     app.run(host='127.0.0.1', port=5000, debug=True)
->>>>>>> 696040375d6ad93e82ae81c20dc955d191848d5a
