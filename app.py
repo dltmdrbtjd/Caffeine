@@ -29,6 +29,11 @@ def info():
 @app.route('/login')
 def login():
     return render_template('login.html')
+
+@app.route('/login/sign_up')
+def sign_up():
+    return render_template('sign_up.html')
+
 # 현재주소 불러오기
 @app.route('/address', methods=['GET'])
 def address():
