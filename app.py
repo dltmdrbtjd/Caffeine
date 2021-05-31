@@ -1,18 +1,24 @@
-from flask import Flask, render_template, jsonify, request
-app = Flask(__name__)
+from flask import Flask, render_template, jsonify, request, redirect
+from flask import Flask, request, redirect, render_template
+from models import db, Fcuser
+from flask import session
+from flask_wtf.csrf import CSRFProtect
+from forms import RegisterForm, LoginForm
+from lib import KakaoLocalAPI_Controller
 
 from pymongo import MongoClient
 client = MongoClient('localhost', 27017)
 db = client.dbhomework
 
-from lib import KakaoLocalAPI_Controller
+app = Flask(__name__)
 api = KakaoLocalAPI_Controller.KakaoLocalAPI('772f46499b4c765949e994cc27e7eba0')
 
 
 # HTML 화면 보여주기
 @app.route('/')
-def homework(): 
-    return render_template('index.html')
+def home():
+    userid = session.get('userid', None)
+    return render_template('index.html', userid=userid)
 
 @app.route('/favorite')
 def favorite():
@@ -26,9 +32,38 @@ def like():
 def info():
     return render_template('info.html')
 
-@app.route('/login')
+@app.route('/register', methods=['GET', 'POST'])  # 겟, 포스트 메소드 둘다 사용
+def register():  # get 요청 단순히 페이지 표시 post요청 회원가입-등록을 눌렀을때 정보 가져오는것
+    form = RegisterForm()
+    if form.validate_on_submit():  # POST검사의 유효성검사가 정상적으로 되었는지 확인할 수 있다. 입력 안한것들이 있는지 확인됨.
+        # 비밀번호 = 비밀번호 확인 -> EqulaTo
+
+        fcuser = Fcuser()  # models.py에 있는 Fcuser
+        fcuser.userid = form.data.get('userid')
+        fcuser.username = form.data.get('username')
+        fcuser.password = form.data.get('password')
+
+        print(fcuser.userid, fcuser.password)  # 회원가입 요청시 콘솔창에 ID만 출력 (확인용, 딱히 필요없음)
+        db.session.add(fcuser)  # id, name 변수에 넣은 회원정보 DB에 저장
+        db.session.commit()  # 커밋
+        return "가입 완료"  # post요청일시는 '/'주소로 이동. (회원가입 완료시 화면이동)
+    return render_template('register.html', form=form)
+
+@app.route('/login', methods=['GET', 'POST'])
 def login():
-    return render_template('login.html')
+    form = LoginForm()  # 로그인 폼 생성
+    if form.validate_on_submit():  # 유효성 검사
+        session['userid'] = form.data.get('userid')  # form에서 가져온 userid를 session에 저장
+
+        return redirect('/')  # 로그인에 성공하면 홈화면으로 redirect
+
+    return render_template('login.html', form=form)
+
+@app.route('/logout',methods=['GET'])
+def logout():
+    session.pop('userid',None)
+    return redirect('/')
+
 # 현재주소 불러오기
 @app.route('/address', methods=['GET'])
 def address():
@@ -42,5 +77,20 @@ def search():
     query = request.args.get('keyword_give')
     return api.search_keyword(f'{query}')
 
-if __name__ == '__main__':
-    app.run('0.0.0.0', port=5000, debug=True)
+if __name__ == "__main__":
+    basedir = os.path.abspath(os.path.dirname(__file__))  # db파일을 절대경로로 생성
+    dbfile = os.path.join(basedir, 'db.sqlite')  # db파일을 절대경로로 생성
+
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + dbfile
+    app.config['SQLALCHEMY_COMMIT_ON_TEARDOWN'] = True
+    app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+    app.config['SECRET_KEY'] = 'wcsfeufhwiquehfdx'
+
+    csrf = CSRFProtect()
+    csrf.init_app(app)
+
+    db.init_app(app)
+    db.app = app
+    db.create_all()  # db 생성
+
+    app.run(host='127.0.0.1', port=5000, debug=True)
